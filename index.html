@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Ikbal Yuliyanto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+        
+        .header .tech-stack {
+            font-size: 1em;
+            opacity: 0.85;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            font-size: 0.9em;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .content {
+            padding: 45px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 1.6em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(to right, #667eea, #764ba2) 1;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+        }
+        
+        .profile-text {
+            text-align: justify;
+            color: #555;
+            line-height: 1.9;
+            font-size: 0.95em;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .skill-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .skill-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+        
+        .skill-card p {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .experience-card {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #fafbfc;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            background: #f5f7fa;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .experience-card h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .experience-card .role {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+        
+        .experience-card .period {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: #e8eaf6;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+        
+        .experience-card ul {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .experience-card ul li {
+            margin-bottom: 10px;
+            font-size: 0.92em;
+            line-height: 1.7;
+        }
+        
+        .project-highlight {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #667eea30;
+            margin-bottom: 25px;
+        }
+        
+        .project-highlight h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .project-highlight .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .project-highlight p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.93em;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+        
+        .education-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .education-box strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .education-box p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .strengths-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .strength-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .print-button {
+                display: none;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            .experience-card,
+            .project-highlight {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid,
+            .strengths-container {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">💾 Simpan sebagai PDF</button>
+    
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>IKBAL YULIYANTO</h1>
+                <div class="subtitle">Full-Stack / Backend Developer</div>
+                <div class="tech-stack">PHP • Laravel • ASP.NET Core • Node.js</div>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">📱 0895-3633-25620 / 0851-7222-5707</div>
+                    <div class="contact-item">📧 ikbaly94@gmail.com</div>
+                    <div class="contact-item">🔗 <a href="https://github.com/Ikbalyuliyanto" target="_blank">github.com/Ikbalyuliyanto</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Profil Profesional</h2>
+                <p class="profile-text">
+                    Programmer dengan pengalaman lebih dari 7 tahun dalam pengembangan aplikasi skala besar, termasuk sistem rumah sakit, POS, ticketing, inventory, dan automasi chatbot. Berpengalaman sebagai Full-Stack Developer menggunakan PHP, Laravel, JavaScript, Node.js, dan ASP.NET Core 6. Menguasai Linux Server, Docker, PostgreSQL, CI/CD GitHub Workflow, serta integrasi perangkat fisik seperti Scanner KTP, printer POS, gate, dan kiosk. Mampu bekerja mandiri maupun kolaboratif dengan analisis sistem yang kuat.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Keahlian Utama</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>💻 Bahasa Pemrograman</h4>
+                        <p>PHP (Laravel), ASP.NET Core 6, JavaScript, jQuery, Node.js, SQL, HTML, CSS, Bootstrap</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>🗄️ Database</h4>
+                        <p>PostgreSQL, SQL Server, MySQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>🚀 Server & Deployment</h4>
+                        <p>Linux Server, Docker & Docker Compose, GitHub Actions (CI/CD), Apache/Nginx, REST API</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>🛠️ Tools</h4>
+                        <p>VS Code, SQL Server Management Studio, SQLyog, Postman, Git, Docker</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>🌐 Networking</h4>
+                        <p>Mikrotik, OpenWRT, VPN, RT/RW Net</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Pengalaman Kerja</h2>
+                
+                <div class="experience-card">
+                    <h3>PT Benari Solusindo Sejahtera</h3>
+                    <div class="role">Full-Stack Developer & System Integrator</div>
+                    <span class="period">2024 – Sekarang</span>
+                    <ul>
+                        <li>Membangun dan mengembangkan sistem manajemen rumah sakit (QuilvianSystem), termasuk modul pendaftaran, rekam medis, antrian, kasir, manajemen obat</li>
+                        <li>Integrasi dengan perangkat fisik: Scanner KTP, printer POS, gate</li>
+                        <li>Mengembangkan API untuk mendukung sistem rumah sakit dan memastikan alur data berjalan lancar</li>
+                        <li>Menggunakan teknologi ASP.NET Core 6 untuk backend, Next.js untuk frontend, dan PostgreSQL untuk database</li>
+                        <li>Implementasi CI/CD menggunakan GitHub Actions untuk otomatisasi build & deployment</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Sokka Kreatif Teknologi</h3>
+                    <div class="role">Full-Stack Developer</div>
+                    <span class="period">2023 – 2024</span>
+                    <ul>
+                        <li>Membangun sistem manajemen rumah sakit (ASP.NET Core 6, PostgreSQL, Docker)</li>
+                        <li>Integrasi dengan perangkat fisik: Scanner KTP, printer POS, gate</li>
+                        <li>Implementasi CI/CD menggunakan GitHub Workflow untuk otomatisasi build & deployment</li>
+                        <li>Optimasi API multi-module agar lebih cepat dan stabil</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Saloka Theme Park</h3>
+                    <div class="role">Programmer</div>
+                    <span class="period">2020 – 2023</span>
+                    <ul>
+                        <li>Mengembangkan sistem operasional: SalokaPark v2, Gate Entry System, POS, Inventory System</li>
+                        <li>Integrasi hardware seperti printer POS, gate, scanner tiket, dan kiosk</li>
+                        <li>Maintenance 100+ perangkat dan monitoring server harian</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Freelance Projects</h3>
+                    <div class="role">Full-Stack Developer</div>
+                    <span class="period">2016 – 2019</span>
+                    <ul>
+                        <li>Sistem Rekrutmen</li>
+                        <li>Sistem Hotel berbasis Java</li>
+                        <li>Sistem Pertanian</li>
+                        <li>Surat Masuk/Keluar</li>
+                        <li>Pendaftaran Sekolah Online</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Projek Terbaru</h2>
+                <div class="project-highlight">
+                    <h3>QuilvianSystem (2024–Sekarang)</h3>
+                    <span class="role">Full-Stack Developer & System Integrator</span>
+                    <p>Membangun dan mengembangkan sistem manajemen rumah sakit lengkap, termasuk modul pendaftaran, rekam medis, antrian, kasir, manajemen obat, dan integrasi dengan perangkat fisik seperti scanner KTP dan printer POS. Mengembangkan API untuk mendukung sistem rumah sakit dan memastikan alur data berjalan lancar.</p>
+                    <strong style="color: #2c3e50; font-size: 0.95em; display: block; margin-bottom: 10px;">Teknologi:</strong>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ASP.NET Core 6</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQL Server</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Scanner KTP</span>
+                        <span class="tech-tag">Printer POS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Pendidikan</h2>
+                <div class="education-box">
+                    <strong>D3 Manajemen Informatika</strong>
+                    <p>Universitas Nasional PASIM — 2015</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Pengalaman Proyek Lainnya</h2>
+                
+                <div class="experience-card">
+                    <h3>IT Deployer Project (Bali & NTB)</h3>
+                    <span class="period">14 September 2018 – 28 September 2018</span>
+                    <ul>
+                        <li>Pemasangan CentOS 7 ke server, instalasi aplikasi DPRI dan Dokim ke server, serta instalasi driver di setiap komputer</li>
+                        <li>Mengolah dan mengelola database DPRI dan Dokim</li>
+                        <li>Membantu implementasi aplikasi baru di kantor Imigrasi</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Kantor Imigrasi Kelas 1 Jakarta Timur</h3>
+                    <span class="period">14 Desember 2018 – 31 Desember 2018</span>
+                    <ul>
+                        <li>Pengolahan database DPRI, Dokim, dan membantu implementasi aplikasi baru di kantor Imigrasi Kelas 1 Jakarta Timur</li>
+                        <li>Terlibat dalam praktek pembuatan paspor</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Keunggulan</h2>
+                <div class="strengths-container">
+                    <div class="strength-card">✨ Cepat Beradaptasi dengan Teknologi Baru</div>
+                    <div class="strength-card">🔍 Analisis & Debugging yang Kuat</div>
+                    <div class="strength-card">🔧 Integrasi Hardware & Software</div>
+                    <div class="strength-card">🤝 Komunikasi Tim yang Baik</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
