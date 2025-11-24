@@ -447,6 +447,18 @@
                 grid-template-columns: 1fr;
             }
         }
+        @media print {
+          body {
+              -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+              background: white !important;
+          }
+
+          .header {
+              background: #444 !important;
+          }
+      }
+
     </style>
 </head>
 <body>
