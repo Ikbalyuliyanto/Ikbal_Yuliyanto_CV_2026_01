@@ -303,16 +303,139 @@
             body {
                 background: white;
                 padding: 0;
+                line-height: 1.4;
             }
             .container {
                 box-shadow: none;
                 max-width: 100%;
+                border-radius: 0;
             }
             .action-buttons {
                 display: none;
             }
+            .header {
+                padding: 30px 40px;
+            }
+            .header-left h1 {
+                font-size: 2.8em;
+                margin-bottom: 5px;
+            }
+            .header-left .subtitle {
+                font-size: 1.2em;
+                margin-bottom: 4px;
+            }
+            .header-left .tech-stack {
+                font-size: 0.95em;
+            }
+            .contact-grid {
+                gap: 8px;
+            }
+            .contact-item {
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+            .content {
+                padding: 25px 40px;
+            }
             .section {
+                margin-bottom: 20px;
                 page-break-inside: avoid;
+            }
+            .section-title {
+                font-size: 1.3em;
+                margin-bottom: 12px;
+                padding-bottom: 6px;
+            }
+            .profile-text {
+                font-size: 0.88em;
+                line-height: 1.5;
+            }
+            .two-column {
+                gap: 25px;
+            }
+            .experience-card {
+                margin-bottom: 15px;
+                padding: 14px;
+                page-break-inside: avoid;
+            }
+            .experience-card h3 {
+                font-size: 1.05em;
+                margin-bottom: 4px;
+            }
+            .experience-card .role {
+                font-size: 0.92em;
+                margin-bottom: 3px;
+            }
+            .experience-card .period {
+                font-size: 0.8em;
+                margin-bottom: 8px;
+                padding: 2px 8px;
+            }
+            .experience-card ul {
+                margin-left: 16px;
+            }
+            .experience-card ul li {
+                margin-bottom: 5px;
+                font-size: 0.85em;
+                line-height: 1.4;
+            }
+            .project-highlight {
+                padding: 16px;
+                margin-bottom: 15px;
+                page-break-inside: avoid;
+            }
+            .project-highlight h3 {
+                font-size: 1.15em;
+                margin-bottom: 4px;
+            }
+            .project-highlight .role {
+                margin-bottom: 8px;
+                font-size: 0.9em;
+            }
+            .project-highlight p {
+                font-size: 0.85em;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+            .tech-tags {
+                gap: 6px;
+                margin-top: 8px;
+            }
+            .tech-tag {
+                padding: 4px 10px;
+                font-size: 0.75em;
+            }
+            .skill-card {
+                padding: 12px;
+                margin-bottom: 10px;
+            }
+            .skill-card h4 {
+                font-size: 0.92em;
+                margin-bottom: 6px;
+            }
+            .skill-card p {
+                font-size: 0.82em;
+                line-height: 1.4;
+            }
+            .education-box {
+                padding: 12px;
+            }
+            .education-box strong {
+                font-size: 0.95em;
+                margin-bottom: 4px;
+            }
+            .education-box p {
+                font-size: 0.85em;
+            }
+            .strengths-container {
+                gap: 8px;
+            }
+            .strength-card {
+                padding: 10px;
+                font-size: 0.82em;
+            }
+            .skills-grid {
+                gap: 10px;
             }
         }
         
@@ -328,7 +451,6 @@
 </head>
 <body>
     <div class="action-buttons">
-        <button class="btn" onclick="window.print()">🖨️ Print PDF</button>
         <button class="btn" onclick="downloadPDF()">💾 Download PDF</button>
     </div>
     
@@ -344,7 +466,7 @@
                 <div class="contact-grid">
                     <div class="contact-item">📱 0895-3633-25620 / 0851-7222-5707</div>
                     <div class="contact-item">📧 ikbaly94@gmail.com</div>
-                    <div class="contact-item">🔗 <a href="https://github.com/Ikbalyuliyanto" target="_blank">github.com/Ikbalyuliyanto</a></div>
+                    <div class="contact-item">🔗 <a href="https://github.com/Ikbalyuliyanto" target="_blank">ikbalyuliyanto.github.io/Ikbal_Yuliyanto_CV/</a></div>
                 </div>
             </div>
         </div>
